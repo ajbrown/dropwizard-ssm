@@ -8,17 +8,15 @@ env:
 
 jdk:
   - oraclejdk8
-  - oraclejdk9
-  - openjdk8
 
 install: mvn install -P !build-extras -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
-script: mvn test -P !build-extras -B
+script: mvn test -P '!build-extras' -B
 
 cache:
   directories:
     - ~/.m2/repository
 
 after_success:
-  - ./cd/before-deploy.sh
-  - ./cd/deploy.sh
+  - ./build-support/before-deploy.sh
+  - ./build-support/deploy.sh
