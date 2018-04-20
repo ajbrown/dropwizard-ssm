@@ -29,6 +29,17 @@ your servers!
 Similar to environment variable substitution, the variables in your configuration file should match the fully-qualified
 name of the paramter that contains the value.  
 
+Add the Maven dependency:
+```xml
+  <dependency>
+    <groupId>org.ajbrown.dropwizard</group>
+    <artifactId>dropwizard-ssm</artifactId>
+    <version>1.0</version>
+  </dependency>
+```
+
+Add fully-qualified parameter names to your configuration:
+
 ```yaml
 database:
   driverClass: com.mysql.cj.jdbc.Driver
@@ -36,6 +47,8 @@ database:
   user: ${/myapp/database-user}
   password: ${/myapp/database-user}
 ```
+
+Register SSM configuration variable substitution:
 
 ```java
     // Enable variable substitution with AWS Simple Systems Management
