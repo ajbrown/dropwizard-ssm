@@ -48,7 +48,7 @@
   <groupId>org.ajbrown.dropwizard</groupId>
   <artifactId>dropwizard-ssm</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
 
   <distributionManagement>
     <snapshotRepository>

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ajbrown/dropwizard-ssm.svg?branch=develop)](https://travis-ci.org/ajbrown/dropwizard-ssm)
+[![Build Status](https://travis-ci.org/ajbrown/dropwizard-ssm.svg?branch=master)](https://travis-ci.org/ajbrown/dropwizard-ssm)
 
 Dropwizard SSM allows [AWS's Simple System Management parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-paramstore.html) parameters to be used for variable substitution within Dropwizard 
 configurations.  
