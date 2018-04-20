@@ -18,6 +18,8 @@ cache:
   directories:
     - ~/.m2/repository
 
-after_success:
-  - ./build-support/before_deploy.sh
-  - ./build-support/deploy.sh
+deploy:
+  provider: script
+  script: bash build-support/deploy.sh
+  on:
+    tags: true
