@@ -32,7 +32,7 @@ name of the paramter that contains the value.
 Add the Maven dependency:
 ```xml
   <dependency>
-    <groupId>org.ajbrown.dropwizard</group>
+    <groupId>org.ajbrown.dropwizard</groupId>
     <artifactId>dropwizard-ssm</artifactId>
     <version>1.0</version>
   </dependency>

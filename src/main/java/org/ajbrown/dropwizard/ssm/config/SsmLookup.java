@@ -74,22 +74,24 @@ public class SsmLookup
         .withName(paramName)
         .withWithDecryption(true);
 
+    log.trace("Looking up value in ssm key '{}'", paramName);
+
     try {
       GetParameterResult result = ssm.getParameter(request);
       return result.getParameter().getValue();
     }
     catch (ParameterNotFoundException pnfe) {
-      log.debug("Parameter not found in SSM: {}", key);
+      log.debug("Parameter not found in SSM: {}", paramName);
 
     }
     catch (Exception e) {
-      log.warn(String.format("Error looking up parameter '%s' in SSM", key), e);
+      log.warn(String.format("Error looking up parameter '%s' in SSM", paramName), e);
     }
 
     if (strict) {
       throw new UndefinedEnvironmentVariableException(String.format(
           "No parameter found in SSM with name '%s'.  Could not substitute expression '%s'"
-          , key, key));
+          , paramName, key));
     }
 
     return null;
