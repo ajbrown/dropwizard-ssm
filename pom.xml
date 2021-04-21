@@ -24,7 +24,7 @@
   <groupId>org.ajbrown.dropwizard</groupId>
   <artifactId>dropwizard-ssm</artifactId>
   <packaging>jar</packaging>
-  <version>1.1</version>
+  <version>2.0</version>
 
   <name>Dropwizard SSM</name>
   <description>Dropwizard configuration variable substitution using Amazon Simple Systems Manager parameters</description>
@@ -52,16 +52,17 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>8</maven.compiler.release>
 
     <!-- Dependency Versions -->
     <aws-sdk.version>1.11.313</aws-sdk.version>
-    <dropwizard.version>1.3.1</dropwizard.version>
+    <dropwizard.version>2.0.21</dropwizard.version>
     <junit4.version>4.12</junit4.version>
     <hamcrest.version>1.3</hamcrest.version>
     <mockito.version>1.10.19</mockito.version>
 
     <!-- Plugin Versions -->
-    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
@@ -132,6 +133,14 @@
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <detectJavaApiLink>false</detectJavaApiLink>
         </configuration>
       </plugin>
       <plugin>
