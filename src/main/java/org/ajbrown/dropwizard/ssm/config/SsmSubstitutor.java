@@ -20,13 +20,13 @@ import javax.annotation.Nonnull;
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement;
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagementClientBuilder;
 import io.dropwizard.configuration.UndefinedEnvironmentVariableException;
-import org.apache.commons.text.StrSubstitutor;
+import org.apache.commons.text.StringSubstitutor;
 
 /**
  * Uses Amazon Simple Systems manager parameter stores to substitute configuration values.
  */
 public class SsmSubstitutor
-    extends StrSubstitutor
+    extends StringSubstitutor
 {
   public SsmSubstitutor(final boolean strict) {
     this(AWSSimpleSystemsManagementClientBuilder.defaultClient(), strict, false, null);
@@ -56,8 +56,8 @@ public class SsmSubstitutor
    *                                </p>
    *
    *                                <p>This is mostly useful for re-using a variable name across multiple environments</p>
-   * @see io.dropwizard.configuration.EnvironmentVariableLookup#EnvironmentVariableLookup(boolean)
-   * @see org.apache.commons.lang3.text.StrSubstitutor#setEnableSubstitutionInVariables(boolean)
+   * @see io.dropwizard.configuration.EnvironmentVariableLookup
+   * @see org.apache.commons.text.StringSubstitutor#setEnableSubstitutionInVariables(boolean)
    */
   public SsmSubstitutor(@Nonnull final AWSSimpleSystemsManagement ssm, boolean strict,
                         boolean substitutionInVariables, final String namespacePrefix)

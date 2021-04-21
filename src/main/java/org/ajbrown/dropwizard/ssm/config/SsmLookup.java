@@ -21,15 +21,14 @@ import com.amazonaws.services.simplesystemsmanagement.model.GetParameterResult;
 import com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException;
 import com.google.common.base.Strings;
 import io.dropwizard.configuration.UndefinedEnvironmentVariableException;
-import org.apache.commons.text.StrLookup;
+import org.apache.commons.text.lookup.StringLookup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * StrLookup implementation which loads values from Amazon Simple Systems Management parameters.
  */
-public class SsmLookup
-    extends StrLookup<Object>
+public class SsmLookup implements StringLookup
 {
   private static final Logger log = LoggerFactory.getLogger(SsmLookup.class);
 
